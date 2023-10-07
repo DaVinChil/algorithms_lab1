@@ -72,6 +72,9 @@ public class Algorithms {
         int left = Math.max(0, x - i);
 
         int index = Arrays.binarySearch(arr[y], left, right, value);
-        return Math.max(index, 0);
+        if(index < 0) {
+            return -index - 2;
+        }
+        return index;
     }
 }
