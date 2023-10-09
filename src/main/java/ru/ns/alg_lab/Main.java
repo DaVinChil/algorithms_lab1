@@ -85,7 +85,7 @@ public class Main extends Application {
         int times = 50000000;
 
         runTestsForAlgo(Algorithms::basicBinary, 10);
-        runTestsForAlgo(Algorithms::ladder, 10);
+        runTestsForAlgo(Algorithms::ladder, 10);      // Warming up algorithms
         runTestsForAlgo(Algorithms::expLadder, 10);
 
         List<Pair<Number, Number>> binaryChart = runTestsForAlgo(Algorithms::basicBinary, times);
