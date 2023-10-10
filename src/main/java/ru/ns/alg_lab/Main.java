@@ -82,14 +82,13 @@ public class Main extends Application {
      * Test each search algorithm and results into chart.
      **/
     private static void testAlgosAndAddResultToChart(LineChart<Number, Number> lineChart) {
-        int times = 50000000;
+        int times = 5000;
 
-        runTestsForAlgo(Algorithms::basicBinary, 10);
-        runTestsForAlgo(Algorithms::ladder, 10);      // Warming up algorithms
-        runTestsForAlgo(Algorithms::expLadder, 10);
-
+        runTestsForAlgo(Algorithms::basicBinary, 1000);  // Warming up algorithms
         List<Pair<Number, Number>> binaryChart = runTestsForAlgo(Algorithms::basicBinary, times);
+        runTestsForAlgo(Algorithms::ladder, 1000);
         List<Pair<Number, Number>> ladderChart = runTestsForAlgo(Algorithms::ladder, times);
+        runTestsForAlgo(Algorithms::expLadder, 1000);
         List<Pair<Number, Number>> expLadderChart = runTestsForAlgo(Algorithms::expLadder, times);
 
         lineChart.getData().add(getOneLineAtChart("Binary search", binaryChart));
@@ -104,7 +103,7 @@ public class Main extends Application {
      * @return list of (input data amount -> algorithm's execution time)
      */
     private static List<Pair<Number, Number>> runTestsForAlgo(SearchAlgo algo, int times) {
-        int maxDegree = 5;
+        int maxDegree = 13;
         int n = (int) Math.pow(2, maxDegree);
 
         List<Pair<Number, Number>> chart = new ArrayList<>();

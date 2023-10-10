@@ -12,7 +12,7 @@ public class Gen2DArray {
      **/
     public static void setFirstGenTable(int m, int n) {
         target = 2*n+1;
-        table = new int[m][n];;
+        table = new int[m][n];
         for (int i = 0; i < m; ++i)
             for (int j = 0; j < n; ++j)
                 table[i][j] = (n / m * i + j) * 2;
