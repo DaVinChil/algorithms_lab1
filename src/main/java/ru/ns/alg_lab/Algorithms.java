@@ -18,7 +18,7 @@ public class Algorithms {
     }
 
     /**
-     * Searching for the specified value in the specified array, moving from the top right corner to the bottom left.
+     * Searching for the specified value in the specified array, moving from the upper right corner to the lower left.
      *
      * @param arr   the array to be searched
      * @param value the value to be searched for
@@ -36,7 +36,7 @@ public class Algorithms {
     }
 
     /**
-     * Searching for the specified value in the specified array, moving from the top right corner to the bottom left using exponential search.
+     * Searching for the specified value in the specified array, moving from the upper right corner to the lower left using exponential search.
      * Result as same as if c++ lower_bound function was called.
      *
      * @param arr   the array to be searched
