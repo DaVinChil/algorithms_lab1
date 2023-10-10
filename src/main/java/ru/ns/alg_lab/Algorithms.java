@@ -1,6 +1,11 @@
 package ru.ns.alg_lab;
 
+import javafx.scene.effect.Light;
+import javafx.util.Pair;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Algorithms {
     /**
@@ -23,16 +28,19 @@ public class Algorithms {
      * @param arr   the array to be searched
      * @param value the value to be searched for
      */
-    public static void ladder(int[][] arr, int value) {
+    public static List<Pair<Number, Number>> ladder(int[][] arr, int value) {
+        var list = new ArrayList<Pair<Number, Number>>();
         int x = arr[0].length - 1;
         int y = 0;
         while (x >= 0 && y < arr.length) {
+            list.add(new Pair<>(x, y));
             if (arr[y][x] > value)
                 --x;
             else if (arr[y][x] < value)
                 ++y;
-            else return;
+            else return list;
         }
+        return list;
     }
 
     /**
@@ -42,16 +50,19 @@ public class Algorithms {
      * @param arr   the array to be searched
      * @param value the value to be searched for
      */
-    public static void expLadder(int[][] arr, int value) {
+    public static List<Pair<Number, Number>> expLadder(int[][] arr, int value) {
+        var list = new ArrayList<Pair<Number, Number>>();
         int x = arr[0].length - 1;
         int y = 0;
         while (x >= 0 && y < arr.length) {
+            list.add(new Pair<>(x, y));
             if (arr[y][x] > value)
                 x = goLeft(arr, y, x, value);
             else if (arr[y][x] < value)
                 ++y;
-            else return;
+            else return list;
         }
+        return list;
     }
 
     /**

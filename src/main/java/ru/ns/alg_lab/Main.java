@@ -48,8 +48,8 @@ public class Main extends Application {
     private static LineChart<Number, Number> createLineChart() {
         NumberAxis xAxis = new NumberAxis();
         NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Time in nanoseconds");
-        xAxis.setLabel("m");
+        yAxis.setLabel("y");
+        xAxis.setLabel("x");
         LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
         lineChart.setTitle("Algorithms test");
         return lineChart;
@@ -83,17 +83,22 @@ public class Main extends Application {
      **/
     private static void testAlgosAndAddResultToChart(LineChart<Number, Number> lineChart) {
         int times = 5000;
+        int n = (int) Math.pow(2, 13);
+        int m = (int) Math.pow(2, 8);
+        Gen2DArray.genTable(m, n);
+        var list = Algorithms.expLadder(Gen2DArray.table, Gen2DArray.target);
+        lineChart.getData().add(getOneLineAtChart("x", list));
 
-        runTestsForAlgo(Algorithms::basicBinary, 1000);  // Warming up algorithms
-        List<Pair<Number, Number>> binaryChart = runTestsForAlgo(Algorithms::basicBinary, times);
-        runTestsForAlgo(Algorithms::ladder, 1000);
-        List<Pair<Number, Number>> ladderChart = runTestsForAlgo(Algorithms::ladder, times);
-        runTestsForAlgo(Algorithms::expLadder, 1000);
-        List<Pair<Number, Number>> expLadderChart = runTestsForAlgo(Algorithms::expLadder, times);
-
-        lineChart.getData().add(getOneLineAtChart("Binary search", binaryChart));
-        lineChart.getData().add(getOneLineAtChart("Ladder search", ladderChart));
-        lineChart.getData().add(getOneLineAtChart("Exponential ladder search", expLadderChart));
+//        runTestsForAlgo(Algorithms::basicBinary, 1000);  // Warming up algorithms
+//        List<Pair<Number, Number>> binaryChart = runTestsForAlgo(Algorithms::basicBinary, times);
+//        runTestsForAlgo(Algorithms::ladder, 1000);
+//        List<Pair<Number, Number>> ladderChart = runTestsForAlgo(Algorithms::ladder, times);
+//        runTestsForAlgo(Algorithms::expLadder, 1000);
+//        List<Pair<Number, Number>> expLadderChart = runTestsForAlgo(Algorithms::expLadder, times);
+//
+//        lineChart.getData().add(getOneLineAtChart("Binary search", binaryChart));
+//        lineChart.getData().add(getOneLineAtChart("Ladder search", ladderChart));
+//        lineChart.getData().add(getOneLineAtChart("Exponential ladder search", expLadderChart));
     }
 
     /**
