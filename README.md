@@ -30,7 +30,7 @@
 3. Скачать *JavaFX* https://gluonhq.com/products/javafx/
 4. Клонировать репозиторий.
    ```git
-    git clone <link>
+    git clone https://github.com/DaVinChil/algorithms_lab1.git
     ```
 5. Пройти в папку с кодом.
     ```cmd
@@ -51,7 +51,7 @@
 1. Скачать *Java 21* https://www.oracle.com/cis/java/technologies/downloads/.
 2. Клонировать репозиторий.
     ```git
-    git clone <link>
+    git clone https://github.com/DaVinChil/algorithms_lab1.git
     ```
 3. Добавить путь к *bin* в переменную среды PATH.
 4. Запустить программу.
@@ -63,6 +63,7 @@
         ```cmd
         mvnw clean javafx:run
         ```
+*При использовании данного подхода, чтобы изменить способ генерации матрицы и искомого элемента, пройдите в класс ___Gen2DArray___ и измените значение поля ___genType___ на необходимое.*
 
 
 ## Обзор алгоритмов
