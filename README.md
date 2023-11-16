@@ -89,7 +89,7 @@
 *Algorithms on small data*
 ## Генерация 2
 **При генерации таблицы по первой формуле $A[i][j] = N/M * i * j * 2$. В общем картина выглядит так.**
-![second_chart_overall](second_approach_all.png)
+![second_chart_overall](https://github.com/DaVinChil/algorithms_lab1/blob/main/second_approach_all.png)
 *Overall gen2*
 ### Бинарный поиск
 Искомый элемент также отсутствует в матрице, следовательно, результаты и асимптотика ничем не отличается от первой генерации.
